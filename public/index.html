@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artevora | Chicago Contemporary Urban Décor Consultancy</title>
+    <meta name="description" content="Artevora transforms Chicago spaces with contemporary urban design. Sophisticated décor consultancy specializing in graphite black, ice white, and steel accents.">
+    <meta name="keywords" content="Chicago interior design, urban décor, contemporary design, home consultancy, luxury interiors, modern Chicago style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --graphite-black: #1a1a1a;
+            --ice-white: #f8f9fa;
+            --steel-accent: #71797E;
+            --highlight: #4a4a4a;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--graphite-black);
+            background-color: var(--ice-white);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--graphite-black);
+            color: var(--ice-white);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--ice-white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--steel-accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 2rem;
+        }
+        
+        nav a {
+            color: var(--ice-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--steel-accent);
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--steel-accent);
+            left: 0;
+            bottom: 0;
+            transition: var(--transition);
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--ice-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.9)), url('https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--ice-white);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #ddd;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--steel-accent);
+            color: var(--ice-white);
+            padding: 0.9rem 2rem;
+            text-decoration: none;
+            border: none;
+            font-weight: 500;
+            border-radius: 2px;
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--highlight);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* About Section */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--steel-accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 3px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: #f0f0f0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--ice-white);
+            padding: 2rem;
+            border-radius: 3px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--steel-accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay h3 {
+            color: var(--ice-white);
+            text-align: center;
+            font-size: 1.3rem;
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 3px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: var(--ice-white);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .lightbox-close:hover {
+            color: var(--steel-accent);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: #f0f0f0;
+        }
+        
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial-card {
+            min-width: 100%;
+            padding: 2rem;
+            background-color: var(--ice-white);
+            border-radius: 3px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: var(--steel-accent);
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .testimonial-dot.active {
+            background-color: var(--steel-accent);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .map-container {
+            height: 100%;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--graphite-black);
+            color: var(--ice-white);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--steel-accent);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-col a:hover {
+            color: var(--steel-accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--steel-accent);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Policy Pages */
+        .policy-page {
+            padding: 8rem 0 5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .policy-page h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .policy-page h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--steel-accent);
+        }
+        
+        .policy-page p {
+            margin-bottom: 1rem;
+        }
+        
+        .policy-page ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .back-btn {
+            margin-top: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--graphite-black);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav li {
+                margin: 1rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">ARTEV<span>ORA</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Chicago Contemporary Urban Décor</h1>
+            <p>Artevora transforms living spaces with sophisticated Chicago-inspired design, blending graphite black, ice white, and steel accents to create modern urban sanctuaries.</p>
+            <a href="#contact" class="btn">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Artevora</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Founded in the heart of Chicago, Artevora is a premier home décor consultancy specializing in contemporary urban style. Our philosophy is rooted in the dynamic energy of Chicago's architectural landscape, where industrial heritage meets modern sophistication.</p>
+                    <p>We transform residential and commercial spaces into curated environments that balance form and function. Our signature palette—graphite black, ice white, and steel accents—creates a timeless aesthetic that reflects Chicago's bold spirit while providing warmth and livability.</p>
+                    <p>Our team of seasoned designers brings a meticulous eye for detail and deep understanding of urban living. We work closely with each client to create personalized spaces that not only look exceptional but also enhance daily life through intelligent design solutions.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artevora designed contemporary Chicago living room with graphite and steel accents">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Residential Design</h3>
+                    <p>Complete home transformations reflecting Chicago's contemporary urban aesthetic with personalized touches.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Commercial Spaces</h3>
+                    <p>Office and retail environments designed to impress clients while optimizing workflow and brand identity.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Color Consultation</h3>
+                    <p>Expert guidance on color schemes featuring our signature graphite, ice white, and steel palette.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Furniture Curation</h3>
+                    <p>Selection of contemporary furniture pieces that blend form, function, and urban sophistication.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Lighting Design</h3>
+                    <p>Strategic lighting plans that highlight architectural features and create ambiance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>Full Project Management</h3>
+                    <p>End-to-end coordination of your design project from concept to final installation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-image="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2158&q=80" data-title="Interior Living Spaces">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Contemporary Chicago interior living room with graphite accents">
+                    <div class="portfolio-overlay">
+                        <h3>Interior living spaces</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-image="https://images.unsplash.com/photo-1519643381401-22c77e60520e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" data-title="Coast Residence">
+                    <img src="https://images.unsplash.com/photo-1519643381401-22c77e60520e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Modern Chicago kitchen with steel accents and ice white countertops">
+                    <div class="portfolio-overlay">
+                        <h3>Coast Residence</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-image="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" data-title="Living Space">
+                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chicago living space with contemporary urban design">
+                    <div class="portfolio-overlay">
+                        <h3>Living Space</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-image="https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" data-title="Park Sitting Space ">
+                    <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chicago park sitting with modern urban aesthetic">
+                    <div class="portfolio-overlay">
+                        <h3>Park sitting space </h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-image="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" data-title="Wicker City Bedroom">
+                    <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Urban bedroom design with graphite and steel elements">
+                    <div class="portfolio-overlay">
+                        <h3>Wicker City Bedroom</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-image="https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" data-title="The Loop Penthouse">
+                    <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chicago eco space views and contemporary design">
+                    <div class="portfolio-overlay">
+                        <h3>Eco space</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+        </div>
+        <div class="lightbox-close" id="lightbox-close">
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonials-slider">
+                <div class="testimonials-container" id="testimonials-container">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Artevora transformed our Park sitting space into a sophisticated urban sanctuary. Their attention to detail and understanding of Chicago's aesthetic is unparalleled."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Michael & Sarah Johnson</h4>
+                                <p>Lincoln Park Residence</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Artevora transformed my living space into a masterpiece of comfort and artistry."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>David Chen</h4>
+                                <p>Tech Startup CEO</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Thanks to Artevora, my bedroom is now a perfect sanctuary for rest and relaxation."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Elena Rodriguez</h4>
+                                <p>Gold Coast Homeowner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "From concept to completion, Artevora delivered exceptional service. Our River North loft now feels like a true reflection of Chicago's design scene."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>James & Olivia Wilson</h4>
+                                <p>River North Loft</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "As a Chicago-based architect, I'm particular about design. Artevora exceeded my expectations with their innovative use of materials and space planning."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Robert Kim</h4>
+                                <p>Architect, Wicker Park</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "The consultation process was thorough and insightful. Artevora helped us select pieces that work perfectly in our open-concept Logan Square space."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Marcus Thompson</h4>
+                                <p>Logan Square Residence</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav" id="testimonial-nav">
+                    <!-- Dots will be added by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.588944477935!2d-87.63115688455837!3d41.87887577922156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2cbee269f34d%3A0x5c81ed7a5e3b3e5c!2sChicago%2C%20IL!5e0!3m2!1sen!2sus!4v1654541892345!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Artevora Location in Chicago"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Artevora</h3>
+                    <p>Chicago's premier contemporary urban décor consultancy. Transforming spaces with graphite black, ice white, and steel accents since 2015.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Residential Design</a></li>
+                        <li><a href="#services">Commercial Spaces</a></li>
+                        <li><a href="#services">Color Consultation</a></li>
+                        <li><a href="#services">Furniture Curation</a></li>
+                        <li><a href="#services">Lighting Design</a></li>
+                        <li><a href="#services">Project Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPolicy('privacy')">Privacy Policy</a></li>
+                        <li><a href="#" onclick="showPolicy('terms')">Terms & Conditions</a></li>
+                        <li><a href="#" onclick="showPolicy('refund')">Refund Policy</a></li>
+                        <li><a href="#" onclick="showPolicy('cookie')">Cookie Policy</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="tel:+13125551234">(312) 555-1234</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Artevora Chicago Décor Consultancy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Policy Pages (Hidden by default) -->
+    <div id="policy-pages" style="display: none;">
+        <!-- Privacy Policy -->
+        <div class="policy-page" id="privacy-policy">
+            <h1>Privacy Policy</h1>
+            <p>Last updated: October 1, 2023</p>
+            
+            <h2>1. Information We Collect</h2>
+            <p>Artevora collects personal information that you voluntarily provide when using our services, including name, email address, phone number, and project details. We may also collect technical data such as IP address, browser type, and device information.</p>
+            
+            <h2>2. How We Use Your Information</h2>
+            <p>We use your information to provide design services, communicate with you about projects, improve our services, and send marketing communications (with your consent). We do not sell or rent your personal information to third parties.</p>
+            
+            <h2>3. Data Security</h2>
+            <p>We implement industry-standard security measures to protect your personal information. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.</p>
+            
+            <h2>4. Third-Party Services</h2>
+            <p>We may use third-party services (such as analytics tools) that collect information about your use of our website. These services have their own privacy policies.</p>
+            
+            <h2>5. Your Rights</h2>
+            <p>You have the right to access, correct, or delete your personal information. To exercise these rights, contact us at privacy@artevora.com.</p>
+            
+            <h2>6. Changes to This Policy</h2>
+            <p>We may update this policy periodically. We will notify you of significant changes by posting the new policy on our website.</p>
+            
+            <a href="#" class="btn back-btn" onclick="hidePolicies()">Back to Website</a>
+        </div>
+        
+        <!-- Terms & Conditions -->
+        <div class="policy-page" id="terms-conditions">
+            <h1>Terms & Conditions</h1>
+            <p>Last updated: October 1, 2023</p>
+            
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using Artevora's services, you accept and agree to be bound by these Terms and Conditions.</p>
+            
+            <h2>2. Services</h2>
+            <p>Artevora provides home décor consultancy services. All design concepts, drawings, and recommendations remain our intellectual property until full payment is received.</p>
+            
+            <h2>3. Client Responsibilities</h2>
+            <p>Clients agree to provide accurate information, make timely decisions, and provide access to the project site as needed for consultations and installations.</p>
+            
+            <h2>4. Payment Terms</h2>
+            <p>Payment schedules are outlined in individual project agreements. A deposit is required to commence work, with subsequent payments tied to project milestones.</p>
+            
+            <h2>5. Limitation of Liability</h2>
+            <p>Artevora's liability is limited to the value of services rendered. We are not liable for delays caused by clients, contractors, or unforeseen circumstances.</p>
+            
+            <h2>6. Governing Law</h2>
+            <p>These terms are governed by Illinois law. Any disputes shall be resolved in Chicago, IL.</p>
+            
+            <a href="#" class="btn back-btn" onclick="hidePolicies()">Back to Website</a>
+        </div>
+        
+        <!-- Refund Policy -->
+        <div class="policy-page" id="refund-policy">
+            <h1>Refund Policy</h1>
+            <p>Last updated: October 1, 2023</p>
+            
+            <h2>1. Consultation Fees</h2>
+            <p>Initial consultation fees are non-refundable as they reserve our time and expertise for your project assessment.</p>
+            
+            <h2>2. Project Deposits</h2>
+            <p>Project deposits are refundable only if cancellation occurs within 72 hours of signing the agreement and before any design work has commenced.</p>
+            
+            <h2>3. Milestone Payments</h2>
+            <p>Payments for completed project milestones are non-refundable as they compensate for work already performed.</p>
+            
+            <h2>4. Product Purchases</h2>
+            <p>Furniture and décor items purchased through Artevora are subject to the return policies of the individual manufacturers. We will assist with returns when possible but cannot guarantee refunds from third parties.</p>
+            
+            <h2>5. Service Dissatisfaction</h2>
+            <p>If you are dissatisfied with our services, we will make reasonable efforts to address your concerns. Partial refunds may be issued at our discretion if services were not rendered as agreed.</p>
+            
+            <h2>6. Processing Refunds</h2>
+            <p>Approved refunds will be processed within 14 business days and issued to the original payment method.</p>
+            
+            <a href="#" class="btn back-btn" onclick="hidePolicies()">Back to Website</a>
+        </div>
+        
+        <!-- Cookie Policy -->
+        <div class="policy-page" id="cookie-policy">
+            <h1>Cookie Policy</h1>
+            <p>Last updated: October 1, 2023</p>
+            
+            <h2>1. What Are Cookies</h2>
+            <p>Cookies are small text files stored on your device when you visit our website. They help us provide a better user experience and understand how visitors interact with our site.</p>
+            
+            <h2>2. How We Use Cookies</h2>
+            <p>Artevora uses cookies for essential website functions, analytics, and advertising purposes (including Google Ads).</p>
+            
+            <h2>3. Types of Cookies We Use</h2>
+            <ul>
+                <li><strong>Essential Cookies:</strong> Required for basic site functionality</li>
+                <li><strong>Analytics Cookies:</strong> Help us understand how visitors use our site</li>
+                <li><strong>Advertising Cookies:</strong> Used to deliver relevant ads through Google Ads and other platforms</li>
+                <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
+            </ul>
+            
+            <h2>4. Third-Party Cookies</h2>
+            <p>We use Google Analytics and Google Ads, which set their own cookies. These help us track conversions and optimize our advertising campaigns.</p>
+            
+            <h2>5. Managing Cookies</h2>
+            <p>You can control cookie settings through your browser. However, disabling essential cookies may affect website functionality.</p>
+            
+            <h2>6. Consent</h2>
+            <p>By using our website, you consent to our use of cookies in accordance with this policy.</p>
+            
+            <a href="#" class="btn back-btn" onclick="hidePolicies()">Back to Website</a>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.getAttribute('data-image');
+                const imgTitle = item.getAttribute('data-title');
+                lightboxImg.src = imgSrc;
+                lightboxImg.alt = imgTitle;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Testimonials Slider
+        const testimonialsContainer = document.getElementById('testimonials-container');
+        const testimonialNav = document.getElementById('testimonial-nav');
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        
+        // Create navigation dots
+        testimonialCards.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'testimonial-dot';
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToTestimonial(index);
+            });
+            testimonialNav.appendChild(dot);
+        });
+        
+        let currentTestimonial = 0;
+        
+        function goToTestimonial(index) {
+            currentTestimonial = index;
+            testimonialsContainer.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Update active dot
+            document.querySelectorAll('.testimonial-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+        
+        // Auto-advance testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+            goToTestimonial(currentTestimonial);
+        }, 5000);
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you within 24 hours.');
+            contactForm.reset();
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Policy Pages Functionality
+        function showPolicy(policyType) {
+            // Hide main content
+            document.querySelector('header').style.display = 'none';
+            document.querySelectorAll('section, footer').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            // Show policy pages container and specific policy
+            document.getElementById('policy-pages').style.display = 'block';
+            document.querySelectorAll('.policy-page').forEach(page => {
+                page.style.display = 'none';
+            });
+            document.getElementById(`${policyType}-policy`).style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        function hidePolicies() {
+            // Show main content
+            document.querySelector('header').style.display = 'block';
+            document.querySelectorAll('section, footer').forEach(el => {
+                el.style.display = 'block';
+            });
+            
+            // Hide policy pages
+            document.getElementById('policy-pages').style.display = 'none';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Form validation enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add required attribute to form fields
+            const formInputs = document.querySelectorAll('#contactForm input, #contactForm textarea');
+            formInputs.forEach(input => {
+                input.setAttribute('required', '');
+            });
+        });
+    </script>
+</body>
+</html>
